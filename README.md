@@ -3,7 +3,7 @@
 
 ## installation
 ```sh
-go get -u github.com/afeiship/pkgjson
+go get -u github.com/afeiship/gittag
 ```
 
 ## usage
