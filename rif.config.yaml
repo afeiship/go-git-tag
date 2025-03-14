@@ -1,0 +1,15 @@
+name: golang-library
+files:
+  - '*.*'
+  - '.*'
+  - '*'
+  - '__tests__/*.go'
+  - '!node_modules'
+  - '!rif.config.yaml'
+replacements:
+  - from: /golang-library-description/g
+    to: Git tag update/local/remote.
+  - from: /golang-library/g
+    to: ${PROJECT_NAME}
+  - from: /pkgname/g
+    to: gittag
