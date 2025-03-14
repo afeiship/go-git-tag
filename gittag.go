@@ -169,15 +169,9 @@ func DeleteTag(tagName string) error {
 //		log.Fatal(err)
 //	}
 func DeleteLocalAll(pattern string) error {
-	cmd := exec.Command("git", "tag", "-l", pattern)
-	output, err := cmd.Output()
+	tags, err := FindMany(pattern)
 	if err != nil {
-		return fmt.Errorf("获取标签列表失败: %v", err)
-	}
-
-	tags := strings.Split(strings.TrimSpace(string(output)), "\n")
-	if len(tags) == 0 || (len(tags) == 1 && tags[0] == "") {
-		return nil
+		return nil // 如果没有找到标签，直接返回
 	}
 
 	for _, tag := range tags {
@@ -206,15 +200,9 @@ func DeleteLocalAll(pattern string) error {
 //		log.Fatal(err)
 //	}
 func DeleteRemoteAll(pattern string) error {
-	cmd := exec.Command("git", "tag", "-l", pattern)
-	output, err := cmd.Output()
+	tags, err := FindMany(pattern)
 	if err != nil {
-		return fmt.Errorf("获取标签列表失败: %v", err)
-	}
-
-	tags := strings.Split(strings.TrimSpace(string(output)), "\n")
-	if len(tags) == 0 || (len(tags) == 1 && tags[0] == "") {
-		return nil
+		return nil // 如果没有找到标签，直接返回
 	}
 
 	for _, tag := range tags {
