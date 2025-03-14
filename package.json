@@ -1,11 +1,20 @@
 {
   "name": "go-git-tag",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Git tag update/local/remote.",
   "license": "MIT",
   "scripts": {
     "test": "go test __tests__/*.go -v",
     "release": "release-it"
-  }
+  },
+  "keywords": [
+    "autoincrement",
+    "git",
+    "inc",
+    "local",
+    "remote",
+    "tag",
+    "update"
+  ]
 }
