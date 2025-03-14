@@ -1,6 +1,7 @@
 package gittag
 
 import (
+	"github.com/afeiship/gittag"
 	"testing"
 )
 
